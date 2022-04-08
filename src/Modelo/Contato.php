@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Modelo;
+
 class Contato{
 
     private string $email;

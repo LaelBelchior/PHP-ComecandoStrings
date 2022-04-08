@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Modelo;
+
 class Usuario{
     private string $nome;
     private string $sobrenome;

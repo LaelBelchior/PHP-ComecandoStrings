@@ -1,7 +1,9 @@
 <?php
 
-require_once 'Usuario.php';
-require_once 'Contato.php';
+require_once 'autoload.php';
+
+use App\Modelo\Usuario;
+use App\Modelo\Contato;
 
 $usuario = new Usuario($_POST['nome']);
 $contato = new Contato($_POST['email']);
