@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Modelo;
-
 class Usuario{
     private string $nome;
     private string $sobrenome;
+    private string $senha;
 
-    public function __construct(string $nome)
+    public function __construct(string $nome, string $senha)
     {
         $nomeSobrenome = explode(" ", $nome, 2);
         
@@ -20,6 +19,16 @@ class Usuario{
             $this -> sobrenome = "Sobrenome inválido!";
         } else {
             $this -> sobrenome = $nomeSobrenome[1];
+        }
+    }
+
+    public function validaSenha(string $senha): void
+    {
+        $tamanhoSenha = strlen(trim($senha));
+        if($senha >= 6){
+            $this -> senha = $senha;
+        } else {
+            $this -> senha = "Senha inválida!";
         }
     }
 

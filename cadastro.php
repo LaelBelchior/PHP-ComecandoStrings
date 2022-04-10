@@ -1,12 +1,10 @@
 <?php
 
-require_once 'autoload.php';
+require_once './src/Modelo/Usuario.php';
+require_once './src/Modelo/Contato.php';
 
-use App\Modelo\Usuario;
-use App\Modelo\Contato;
-
-$usuario = new Usuario($_POST['nome']);
-$contato = new Contato($_POST['email']);
+$usuario = new Usuario($_POST['nome'], $_POST['senha']);
+$contato = new Contato($_POST['email'], $_POST['endereco'], $_POST['cep']);
 
 ?>
 
@@ -30,8 +28,8 @@ $contato = new Contato($_POST['email']);
     <li class="list-group-item">Usuário: <?php echo $contato -> getUsuario();?> </li>
     <li class="list-group-item">Senha: </li>
     <li class="list-group-item">Telefone: </li>
-    <li class="list-group-item">Email: </li>
-    <li class="list-group-item">Endereço: </li>
+    <li class="list-group-item">Email: <?php echo $contato -> getEmail();?> </li>
+    <li class="list-group-item">Endereço: <?php echo $contato -> getEnderecoCep();?> </li>
 </ul>
 </div>
 </body>
