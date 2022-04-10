@@ -4,7 +4,7 @@ require_once './src/Modelo/Usuario.php';
 require_once './src/Modelo/Contato.php';
 
 $usuario = new Usuario($_POST['nome'], $_POST['senha']);
-$contato = new Contato($_POST['email'], $_POST['endereco'], $_POST['cep']);
+$contato = new Contato($_POST['email'], $_POST['endereco'], $_POST['cep'], $_POST['telefone']);
 
 ?>
 
@@ -26,8 +26,8 @@ $contato = new Contato($_POST['email'], $_POST['endereco'], $_POST['cep']);
     <li class="list-group-item">Nome: <?php echo $usuario -> getNome();?> </li>
     <li class="list-group-item">Sobrenome: <?php echo $usuario -> getSobrenome();?> </li>
     <li class="list-group-item">Usuário: <?php echo $contato -> getUsuario();?> </li>
-    <li class="list-group-item">Senha: </li>
-    <li class="list-group-item">Telefone: </li>
+    <li class="list-group-item">Senha: <?php echo $usuario -> getSenha();?> </li>
+    <li class="list-group-item">Telefone: <?php echo $contato -> getTelefone();?> </li>
     <li class="list-group-item">Email: <?php echo $contato -> getEmail();?> </li>
     <li class="list-group-item">Endereço: <?php echo $contato -> getEnderecoCep();?> </li>
 </ul>

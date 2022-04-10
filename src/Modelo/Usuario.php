@@ -20,12 +20,14 @@ class Usuario{
         } else {
             $this -> sobrenome = $nomeSobrenome[1];
         }
+
+        $this -> validaSenha($senha);
     }
 
     public function validaSenha(string $senha): void
     {
         $tamanhoSenha = strlen(trim($senha));
-        if($senha >= 6){
+        if($tamanhoSenha >= 6){
             $this -> senha = $senha;
         } else {
             $this -> senha = "Senha inválida!";
@@ -40,6 +42,11 @@ class Usuario{
     public function getSobrenome(): string
     {
         return $this -> sobrenome;
+    }
+
+    public function getSenha(): string
+    {
+        return $this -> senha;
     }
 
 }
